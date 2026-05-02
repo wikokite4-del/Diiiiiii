@@ -87,5 +87,9 @@ button {
 }
 
 .photo-box { position: relative; overflow: hidden; }
+#admin-panel {
+    display: none; /* Ховаємо за замовчуванням */
+}
+
 
 
