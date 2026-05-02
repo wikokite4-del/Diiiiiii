@@ -74,3 +74,13 @@
 </script>
 </body>
 </html>
+// Відкриття подвійним тапом
+document.body.addEventListener('dblclick', function (e) {
+    toggleAdmin();
+});
+
+function toggleAdmin() {
+    let panel = document.getElementById('admin-panel');
+    panel.style.display = (panel.style.display === 'none' || panel.style.display === '') ? 'block' : 'none';
+}
+
