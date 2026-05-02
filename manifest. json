@@ -1,6 +1,6 @@
 {
   "short_name": "Дія",
-  "name": "Дія - Державний сервіс",
+  "name": "Дія",
   "icons": [
     {
       "src": "https://diia.gov.ua/img/logo.svg",
@@ -8,9 +8,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "./index.html",
-  "background_color": "#000000",
+  "start_url": ".",
   "display": "standalone",
-  "scope": "./",
+  "background_color": "#000000",
   "theme_color": "#000000"
 }
