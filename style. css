@@ -1,1 +1,252 @@
+:root {
+    --diia-blue: #007AFF;
+    --text-gray: #8E8E93;
+    --card-bg: #FFFFFF;
+    --bg-grad: linear-gradient(180deg, #E1F1F8 0%, #FFFFFF 100%);
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #000;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Екрани */
+.screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/* Splash */
+#splash {
+    display: flex;
+    background: #000;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+#splash h1 {
+    color: #fff;
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: -3px;
+}
+
+/* Пін-код */
+#login-screen {
+    background: var(--bg-grad);
+    z-index: 8888;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12vh;
+}
+
+.pin-dots {
+    display: flex;
+    gap: 16px;
+    margin: 40px 0;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid #C7C7CC;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.dot.active {
+    background: #000;
+    border-color: #000;
+    transform: scale(1.1);
+}
+
+.numpad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 280px;
+}
+
+.num-btn {
+    width: 75px;
+    height: 75px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 400;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.num-btn:active {
+    background: #E5E5EA;
+}
+
+/* Основний додаток */
+#app {
+    background: var(--bg-grad);
+    overflow-y: auto;
+}
+
+.header {
+    padding: 60px 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 34px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+/* Картка */
+.card-container {
+    padding: 10px 16px;
+    perspective: 1500px;
+}
+
+.card {
+    width: 100%;
+    height: 480px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    border-radius: 30px;
+    padding: 24px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.07);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Деталі картки */
+.photo-box {
+    width: 115px;
+    height: 155px;
+    background: #F2F2F7;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.info-label {
+    font-size: 10px;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.info-value {
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #000;
+}
+
+/* Промінь */
+.scanner {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 3px;
+    background: #00FF95;
+    box-shadow: 0 0 15px #00FF95;
+    animation: scan 4s infinite ease-in-out;
+    opacity: 0.5;
+}
+
+@keyframes scan {
+    0%, 100% { top: 5%; }
+    50% { top: 95%; }
+}
+
+/* Навігація */
+.nav-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(20px);
+    display: flex;
+    border-top: 0.5px solid #C6C6C8;
+    padding-bottom: 25px;
+}
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-gray);
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.nav-item.active {
+    color: #000;
+}
+
+/* Адмінка */
+#drawer {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 30px 30px 0 0;
+    transition: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    z-index: 10000;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
+}
+
+#drawer.open {
+    bottom: 0;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    background: #F2F2F7;
+    border: none;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
 
