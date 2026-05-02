@@ -1,0 +1,50 @@
+/* style.css */
+body {
+    background: #000;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+#admin-panel {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background: #1c1c1e;
+    padding: 20px;
+    z-index: 100;
+    border-bottom: 1px solid #333;
+}
+
+#admin-panel input {
+    display: block; width: 90%; margin-bottom: 10px;
+    padding: 10px; background: #2c2c2e; border: none; color: white;
+    border-radius: 8px;
+}
+
+.id-card {
+    width: 350px; height: 530px;
+    margin: 50px auto;
+    background: linear-gradient(145deg, #1e1e20 0%, #0a0a0b 100%);
+    border-radius: 32px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    border: 1px solid #2c2c2e;
+}
+
+.header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 30px; }
+.logo { font-size: 22px; }
+#live-time { color: #00ffaa; }
+
+.photo-box {
+    width: 150px; height: 200px;
+    background: #2c2c2e; border-radius: 16px;
+    background-size: cover; background-position: center;
+    margin-bottom: 20px;
+}
+
+.field label { font-size: 11px; color: #8e8e93; text-transform: uppercase; display: block; }
+.field div { font-size: 20px; font-weight: 500; margin-bottom: 15px; }
+.row { display: flex; gap: 40px; }
+.doc-num { font-size: 18px; color: #8e8e93; margin-top: 20px; }
