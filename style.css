@@ -48,3 +48,25 @@ body {
 .field div { font-size: 20px; font-weight: 500; margin-bottom: 15px; }
 .row { display: flex; gap: 40px; }
 .doc-num { font-size: 18px; color: #8e8e93; margin-top: 20px; }
+#admin-panel {
+    background: rgba(28, 28, 30, 0.95); /* Напівпрозорість */
+    backdrop-filter: blur(10px); /* Ефект розмиття фону як в iOS */
+    border-radius: 0 0 20px 20px;
+}
+
+#admin-panel input {
+    border: 1px solid #3a3a3c;
+    background: #000;
+}
+
+button {
+    background: #007aff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
